@@ -1,0 +1,181 @@
+<!-- Add Customer Form Container -->
+<div id="add-customer-form-container" class="add-customer-form" style="display: none;">
+    <h4>
+        <i class="fas fa-user-plus"></i>
+        Tambah Calon Pelanggan Baru
+    </h4>
+    <p class="form-subtitle">Silakan isi informasi calon pelanggan baru dengan lengkap</p>
+    
+    <form id="addCustomerForm" class="form-grid">
+        <!-- Personal Information Section -->
+        <div class="form-section">
+            <h5 class="section-title">
+                <i class="fas fa-user"></i>
+                Informasi Pribadi
+            </h5>
+            
+            <div class="form-group">
+                <label for="customerName">
+                    <i class="fas fa-user"></i>
+                    Nama Lengkap *
+                </label>
+                <input type="text" id="customerName" name="nama" required 
+                       placeholder="Masukkan nama lengkap calon pelanggan">
+            </div>
+            
+            <div class="form-group">
+                <label for="customerPhone">
+                    <i class="fas fa-phone"></i>
+                    No Telepon *
+                </label>
+                <input type="tel" id="customerPhone" name="no_telepon" required 
+                       placeholder="Contoh: 081234567890" 
+                       pattern="[0-9]{10,13}">
+                <small class="helper-text">Format: 081234567890 (10-13 digit)</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="customerEmail">
+                    <i class="fas fa-envelope"></i>
+                    Email
+                </label>
+                <input type="email" id="customerEmail" name="email" 
+                       placeholder="email@domain.com">
+            </div>
+        </div>
+        
+        <!-- Address Information Section -->
+        <div class="form-section">
+            <h5 class="section-title">
+                <i class="fas fa-map-marker-alt"></i>
+                Alamat
+            </h5>
+            
+            <div class="form-group">
+                <label for="customerAddress">
+                    <i class="fas fa-home"></i>
+                    Alamat Lengkap *
+                </label>
+                <textarea id="customerAddress" name="alamat" rows="3" required 
+                          placeholder="Masukkan alamat lengkap calon pelanggan"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="odpTerdekat">
+                    <i class="fas fa-network-wired"></i>
+                    ODP Terdekat *
+                </label>
+                <input type="text" id="odpTerdekat" name="odp_terdekat" required 
+                       placeholder="Contoh: ODP-001/ABC">
+                <small class="helper-text">Masukkan kode ODP terdekat dari lokasi</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="kelurahan">
+                    <i class="fas fa-city"></i>
+                    Kelurahan
+                </label>
+                <input type="text" id="kelurahan" name="kelurahan" 
+                       placeholder="Nama kelurahan">
+            </div>
+        </div>
+        
+        <!-- Sales Assignment Section -->
+        <div class="form-section">
+            <h5 class="section-title">
+                <i class="fas fa-user-tie"></i>
+                Penugasan Sales
+            </h5>
+            
+            <div class="form-group">
+                <label for="assignedSales">
+                    <i class="fas fa-user-check"></i>
+                    Nama Sales *
+                </label>
+                <select id="assignedSales" name="nama_sales" required>
+                    <option value="">Pilih Sales</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="visitStatus">
+                    <i class="fas fa-calendar-check"></i>
+                    Status Visit
+                </label>
+                <select id="visitStatus" name="visit">
+                    <option value="">Pilih Status</option>
+                    <option value="Visited">Visited</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Scheduled">Scheduled</option>
+                    <option value="Not Visited">Not Visited</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="visitDate">
+                    <i class="fas fa-calendar-alt"></i>
+                    Tanggal Visit
+                </label>
+                <input type="date" id="visitDate" name="tanggal_visit">
+            </div>
+        </div>
+        
+        <!-- Additional Information Section -->
+        <div class="form-section">
+            <h5 class="section-title">
+                <i class="fas fa-info-circle"></i>
+                Informasi Tambahan
+            </h5>
+            
+            <div class="form-group">
+                <label for="customerStatus">
+                    <i class="fas fa-flag"></i>
+                    Status Calon Pelanggan
+                </label>
+                <select id="customerStatus" name="status">
+                    <option value="">Pilih Status</option>
+                    <option value="Baru">Baru</option>
+                    <option value="Follow Up">Follow Up</option>
+                    <option value="Survey">Survey</option>
+                    <option value="Diterima">Diterima</option>
+                    <option value="Tidak Diterima">Tidak Diterima</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="notes">
+                    <i class="fas fa-sticky-note"></i>
+                    Catatan / Keterangan
+                </label>
+                <textarea id="notes" name="keterangan" rows="3" 
+                          placeholder="Catatan tambahan untuk calon pelanggan ini"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="priority">
+                    <i class="fas fa-star"></i>
+                    Prioritas
+                </label>
+                <select id="priority" name="priority">
+                    <option value="Normal">Normal</option>
+                    <option value="Tinggi">Tinggi</option>
+                    <option value="Sangat Tinggi">Sangat Tinggi</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Form Actions -->
+        <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="cancelAddCustomer">
+                <i class="fas fa-times"></i>
+                Batal
+            </button>
+            <button type="submit" class="btn btn-primary" id="saveCustomer">
+                <i class="fas fa-save"></i>
+                Simpan Calon Pelanggan
+            </button>
+        </div>
+    </form>
+</div>
